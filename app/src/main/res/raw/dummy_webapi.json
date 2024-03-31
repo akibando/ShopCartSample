@@ -1,0 +1,39 @@
+{
+  "items": [
+    {
+      "imageURL": "https://fakeimg.pl/120x50/?retina=1&text=ラーメン1&font=noto",
+      "name": "ネギラーメン",
+      "price": 960,
+      "content": "白髪ねぎを特製調味料で和え、豪快にトッピング!　辛さも抑えてあり、辛味が苦手な方にもおススメです。",
+      "status": "available"
+    },
+    {
+      "imageURL": "https://fakeimg.pl/120x50/?retina=1&text=ラーメン2&font=noto",
+      "name": "黒ラーメン",
+      "price": 3500,
+      "content": "たっぷりのニンニクをじっくり揚げ、香りをうつした油=マー油をかけた一品。",
+      "status": "out-of-stock"
+    },
+    {
+      "imageURL": "https://fakeimg.pl/120x50/?retina=1&text=ラーメン3&font=noto",
+      "name": "赤からラーメン",
+      "price": 980,
+      "content": "辛味ペーストをベースに、辛さの中にも、旨味をしっかり感じられように仕上げました。おススメの一杯です。",
+      "status": "available"
+    },
+    {
+      "imageURL": "https://fakeimg.pl/120x50/?retina=1&text=チャーハン3&font=noto",
+      "name": "チャーハン",
+      "price": 620,
+      "content": "パラッと感にこだわった一品",
+      "status": "available"
+    },
+    {
+      "imageURL": "https://fakeimg.pl/200x100/?retina=1&text=餃子&font=noto",
+      "name": "餃子(6個)",
+      "price": 320,
+      "content": "一口で口の中に旨味がジュワッと！ジューシーな美味しさをお楽しみください。",
+      "status": "coming-soon"
+    }
+  ]
+}
