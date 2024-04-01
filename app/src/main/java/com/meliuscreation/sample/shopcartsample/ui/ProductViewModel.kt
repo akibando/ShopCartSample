@@ -4,7 +4,6 @@ import android.graphics.Bitmap
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.map
 import androidx.lifecycle.viewModelScope
 import com.meliuscreation.sample.shopcartsample.domain.entities.CartItemEntity
 import com.meliuscreation.sample.shopcartsample.domain.usecase.AddCartItemUseCase
@@ -71,24 +70,6 @@ class ProductViewModel(
     fun getCartItems(): LiveData<List<CartItemsUiState>> {
         return _productCartLiveData
     }
-
-//    fun onInitialCartItemsState(): LiveData<List<CartItemsUiState>> {
-//        val tmpLiveData = MutableLiveData<List<CartItemEntity>>()
-//        val cartItemsUiState = tmpLiveData.map { cartItems ->
-//            cartItems.map { cartItem ->
-//                CartItemsUiState(
-//                    image = cartItem.image,
-//                    title = cartItem.name
-//                )
-//            }
-//        }
-//
-//        viewModelScope.launch {
-//            tmpLiveData.value = getCartItemsUseCase()
-//        }
-//
-//        return cartItemsUiState
-//    }
 
     fun getProductItem(title: String): ProductItemsUiState {
         val productItems = _productItemsLiveData.value

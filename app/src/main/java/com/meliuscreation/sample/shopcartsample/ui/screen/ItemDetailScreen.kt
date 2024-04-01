@@ -39,7 +39,7 @@ fun ItemDetailScreen(navController: NavController, productViewModel: ProductView
         }
     }
 }
-//fun CardItemWithState(product: ProductStateEntity, onItemClick: () -> Unit) {
+
 @Composable
 fun ItemDetailContent(productItem: ProductViewModel.ProductItemsUiState, onAddToCartClick: () -> Unit) {
     Column(
@@ -88,16 +88,3 @@ fun ItemDetailContent(productItem: ProductViewModel.ProductItemsUiState, onAddTo
     }
 }
 
-//@Preview(showBackground = true)
-//@Composable
-//fun ItemDetailScreenPreview() {
-//    ShopCartSampleTheme {
-//        val navController = rememberNavController()
-//        ItemDetailScreen(
-//            navController = navController,
-//            imageResource = R.drawable.negi_ramen,
-//            title = "ラーメン",
-//            content = "あいうえお",
-//            price = "1,000円")
-//    }
-//}

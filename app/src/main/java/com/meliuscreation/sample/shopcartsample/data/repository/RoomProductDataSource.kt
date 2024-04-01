@@ -1,7 +1,6 @@
 package com.meliuscreation.sample.shopcartsample.data.repository
 
 import com.meliuscreation.sample.shopcartsample.data.db.ProductDao
-import com.meliuscreation.sample.shopcartsample.data.entities.ProductData
 import com.meliuscreation.sample.shopcartsample.data.entities.ProductDbData
 
 class RoomProductDataSource(private val productDao: ProductDao) : ProductDataSource.Local {
