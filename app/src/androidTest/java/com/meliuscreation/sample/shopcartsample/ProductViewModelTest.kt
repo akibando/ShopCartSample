@@ -1,16 +1,13 @@
 package com.meliuscreation.sample.shopcartsample
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.compose.runtime.livedata.observeAsState
-import androidx.lifecycle.Observer
-import com.meliuscreation.sample.shopcartsample.data.repository.ProductRepository
 import com.meliuscreation.sample.shopcartsample.domain.entities.CartItemEntity
 import com.meliuscreation.sample.shopcartsample.domain.entities.ProductDataStateEntity
 import com.meliuscreation.sample.shopcartsample.domain.usecase.AddCartItemUseCase
 import com.meliuscreation.sample.shopcartsample.domain.usecase.GetCartItemsUseCase
 import com.meliuscreation.sample.shopcartsample.domain.usecase.GetProductItemsUseCase
+import com.meliuscreation.sample.shopcartsample.shadow.ProductRepositoryShadow
 import com.meliuscreation.sample.shopcartsample.ui.ProductViewModel
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
@@ -18,12 +15,13 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.TestRule
-import org.mockito.Mockito
-import org.mockito.kotlin.*
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.annotation.Config
 
-@ExperimentalCoroutinesApi
+@RunWith(RobolectricTestRunner::class)
+@Config(manifest = Config.NONE)
 class ProductViewModelTest {
-
 
     @get:Rule
     val testInstantTaskExecutorRule: TestRule = InstantTaskExecutorRule()
@@ -38,10 +36,10 @@ class ProductViewModelTest {
         ProductDataStateEntity(imageUrl = "url2", name = "Product 2")
     )
 
-    private val dummyRepository = DummyRepository(cartItems,productItems)
-    private val getCartItemsUseCase = GetCartItemsUseCase(dummyRepository)
-    private val getProductItemsUseCase = GetProductItemsUseCase(dummyRepository)
-    private val addProductUseCase = AddCartItemUseCase(dummyRepository)
+    private val mockRepository = ProductRepositoryShadow()
+    private val getCartItemsUseCase = GetCartItemsUseCase(mockRepository)
+    private val getProductItemsUseCase = GetProductItemsUseCase(mockRepository)
+    private val addProductUseCase = AddCartItemUseCase(mockRepository)
 
     private lateinit var viewModel: ProductViewModel
 
@@ -53,6 +51,8 @@ class ProductViewModelTest {
 
     @Test
     fun `test initial product items state`() = runBlocking {
+
+        mockRepository.replaceAllProductItem(productItems)
 
         viewModel.onInitialProductItemsState()
 
@@ -77,6 +77,8 @@ class ProductViewModelTest {
 
     @Test
     fun `test initial cart items state`() = runBlocking {
+
+        mockRepository.replaceAllCartItem(cartItems)
 
         viewModel.onInitialCartItemsState()
 
