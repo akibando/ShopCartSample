@@ -9,9 +9,12 @@ import com.meliuscreation.sample.shopcartsample.domain.entities.CartItemEntity
 import com.meliuscreation.sample.shopcartsample.domain.usecase.AddCartItemUseCase
 import com.meliuscreation.sample.shopcartsample.domain.usecase.GetCartItemsUseCase
 import com.meliuscreation.sample.shopcartsample.domain.usecase.GetProductItemsUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ProductViewModel(
+@HiltViewModel
+class ProductViewModel @Inject constructor(
     private val getCartItemsUseCase: GetCartItemsUseCase,
     private val getProductItemsUseCase: GetProductItemsUseCase,
     private val addProductUseCase: AddCartItemUseCase
