@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainAppBar(title: String, arrowBack: Boolean = false, action: Boolean = false,
-               actionIcon: ImageVector? = null, onActionClick: (() -> Unit)? = null,
+               actionIcon: ImageVector? = null, contentDescription: String, onActionClick: (() -> Unit)? = null,
                onArrowBackClick: (() -> Unit)? = null) {
     TopAppBar(
         title = {
@@ -36,7 +36,7 @@ fun MainAppBar(title: String, arrowBack: Boolean = false, action: Boolean = fals
                 IconButton(onClick = { onActionClick() }) {
                     Icon(
                         imageVector = actionIcon,
-                        contentDescription = "",
+                        contentDescription = contentDescription,
                     )
                 }
             }

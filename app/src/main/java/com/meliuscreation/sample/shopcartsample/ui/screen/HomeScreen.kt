@@ -26,6 +26,7 @@ fun HomeScreen(navController: NavController, productViewModel: ProductViewModel)
             title = "商品一覧",
             action = true,
             actionIcon = Icons.Filled.ShoppingCart,
+            contentDescription = "shopping cart",
             onActionClick = {
                 navController.navigate("ShoppingCart")
             })

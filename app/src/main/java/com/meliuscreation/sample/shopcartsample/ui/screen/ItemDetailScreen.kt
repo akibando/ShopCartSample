@@ -32,6 +32,7 @@ fun ItemDetailScreen(navController: NavController, productViewModel: ProductView
     Column {
         MainAppBar(title = productItemUiState.title,
             arrowBack = true,
+            contentDescription = "arrow back click",
             onArrowBackClick = { navController.popBackStack() })
         ItemDetailContent(productItemUiState) {
             Log.v("ItemDetailScreen", "on add cart ${productItemUiState.title}")

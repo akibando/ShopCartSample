@@ -12,6 +12,7 @@ fun ShoppingCartScreen(navController: NavController, productViewModel: ProductVi
     Column {
         MainAppBar(title = "商品カート",
             arrowBack = true,
+            contentDescription = "arrow back click",
             onArrowBackClick = { navController.popBackStack() })
         ItemCardList(productViewModel)
     }
