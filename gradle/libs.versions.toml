@@ -17,7 +17,7 @@ mockitoAndroid = "3.2.4"
 mockitoCore = "5.8.0"
 mockitoInlineVersion = "5.2.0"
 navigationCompose = "2.7.7"
-robolectric = "4.5.1"
+robolectric = "4.11"
 roomCompiler = "2.6.1"
 roomRuntime = "2.6.1"
 runtimeLivedata = "1.6.4"
@@ -29,6 +29,7 @@ hiltAndroid = "2.48"
 androidx-activity-compose-v130alpha07 = { module = "androidx.activity:activity-compose", version.ref = "activityComposeVersion" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "navigationCompose" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
 androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "coreTesting" }
